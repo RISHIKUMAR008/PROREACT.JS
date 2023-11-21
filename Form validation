@@ -1,0 +1,53 @@
+import React from "react";
+class App extends React.Component{
+  constructor()
+  {
+    super();
+    this.state={
+      name:"",
+      password:"",
+      nameError:"",
+      passwordError:""
+    }
+  }
+  valid(){
+    if(this.state.name.includes("@") && this,this.state.password.length<5)
+    {
+      this.setState({nameError:"Invalid  Name",passwordError:"passowrd length should be more than 5"})
+    }
+    else if(this.state.name.includes("@"))
+    {
+      this.setState({passwordError:"passowrd length should be more than 5"})
+    }  
+    else if(this,this.state.password.length<5)
+    {
+      this.setState({passwordError:"passowrd length should be more than 5"}
+      )
+    }
+    else{
+      return true
+    }
+
+  }
+  submit(){
+    this.setState(
+    {nameError:"",passwordError:""}
+    )
+  if (this.valid()){
+    alert("submit")
+  }
+}
+  render(){
+    return(
+      <div className="App">
+        <h1>Form validation</h1>
+        <input type="text" onChange={(event)=>{this.setState({name:event.target.value})}}/>
+        <p style={{ color:"red",fontsize:"1px"}}>{this.state.nameError}</p>
+        <input type="password" onChange={(event)=>{this.setState({password:event.target.value})}}/>
+        <p style={{ color:"red",fontsize:"1px"}}>{this.state.passwordError}</p>
+        <button onClick={()=>this.submit()}>submit</button>
+      </div>
+    );
+  }
+}
+export default App;
