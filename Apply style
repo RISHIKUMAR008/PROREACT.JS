@@ -1,0 +1,43 @@
+import React from "react";
+import Style from './style'
+class App extends React.Component{
+    render(){
+        return (
+            <div>
+                <style data ="apply"/>
+            </div>
+        );
+    }
+}
+export default App;
+
+
+
+// style.js code
+import React from "react";
+import './custom.css'
+export default function style(prop)
+{
+    const h2={
+        color:'green',
+        fontSize:'36px'
+    }
+    const h3={
+        color:'red',
+        fontSize:'36px'
+    }
+   return <div>
+        <h1 className="header">React style</h1>
+        <h2 style={prop.data=='apply'? h2:h3}>React style</h2>
+    </div>
+}
+
+//custom.css code
+
+
+.header{
+    color: orange;
+    text-align: center;
+    font-size: 48px;
+    margin-top: 100px;
+}
