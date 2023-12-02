@@ -1,0 +1,31 @@
+//
+import React from "react";
+import {Button, container,Row,Col} from 'react-bootstrap'
+class App extends React.Component {
+   render(){
+    return(
+      <div>
+        <h1> use bootstrap with react in hindi</h1>
+        <button onClick={() =>alert("item clickeed")}> click me</button>
+        <container>
+          <Row className="justify-content-md-center">
+            <col xs lg="2">
+              1 of 3
+            </col>
+            <col md="auto"> variable width content</col>
+            <col xs lg="2">3 of 3
+            </col>
+          </Row>
+          <Row>
+            <col>1 of 3</col>
+            <col md="auto"> variable width content</col>
+            <col xs lg="2">
+              3 of 3
+            </col>
+          </Row>
+        </container>
+      </div>
+    );
+   }
+}
+export default App;
