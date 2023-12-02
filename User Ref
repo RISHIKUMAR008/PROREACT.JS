@@ -1,0 +1,21 @@
+import React from "react";
+class App extends React.Component {
+  constructor()
+  {
+    super()
+    this.userRef =React.createRef();
+  }
+  editVal(){
+    this.userREf = React.createRef();
+  }
+  render(){
+    return(
+      <div>
+        <h1>what is Ref in React</h1>
+        <input type="text" name="user"/>
+        <button>click me</button>
+      </div>
+    );
+  }
+}
+export default App;
