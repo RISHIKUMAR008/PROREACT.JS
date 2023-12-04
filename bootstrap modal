@@ -1,0 +1,25 @@
+ import React from "react";
+ import {Button,Modal} from 'react-bootstrap'
+ class App extends React.Component {
+  handleModal(){
+
+  }
+  render() {
+    return(
+      <div>
+      <button onClick={()=>this.handleModal()}>click me to show</button>
+      <Modal show={this.state.show} onHide={()=> this.handleModal()}>
+        <Modal.Header  closeButton>MODAL HEADING</Modal.Header>
+         <Modal.Body>
+          Hello Everyone
+         </Modal.Body>
+         <Modal.Footer>
+          <button>Close</button>
+          <button>save</button>
+         </Modal.Footer>
+         </Modal>
+      </div>
+    );
+  }
+ }
+ export default App;
