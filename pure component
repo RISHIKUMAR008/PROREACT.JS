@@ -1,0 +1,24 @@
+//Form.js
+
+import React, {Component, pureComponent} from "react";
+class forms extends Component {
+    constructor()
+    {
+        super();
+        this.state={
+         data:10
+        }
+    }
+    render(){
+        console.warn(this.state)
+        return (
+            <div>
+              <div>
+                <h1>pure Component{this.state.data}</h1>
+                <button onClick={()=>{this.setState({data:10})}}>update state</button>
+            </div>
+            </div>
+        );
+    }
+}
+export default forms ;
