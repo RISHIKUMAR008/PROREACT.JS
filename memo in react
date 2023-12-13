@@ -1,0 +1,46 @@
+//home.js
+
+import React, { memo } from "react";
+const Home = (props) => {
+    console.warn("inner component",props.data)
+    return (
+        <div>
+            <h1>Home component</h1>
+        </div>
+    );
+};
+export default (Home);
+
+//App.js
+import React,{useState} from "react";
+import Home from './home';
+const App = () => {
+    const [count,setcount]=useState(0)
+    const [data,setData]=useState(0)
+    return (
+        <div>
+            memo with React {count}
+            <home/>
+            <button onClick={()=>setcount(count+1)}>count</button>
+            <button onClick={()=>setData(data+1)}>data</button>
+
+        </div>
+    );
+}
+
+export default App;
+
+
+
+
+//home.js with memo
+import React, { memo } from "react";
+const Home = (props) => {
+    console.warn("inner component",props.data)
+    return (
+        <div>
+            <h1>Home component</h1>
+        </div>
+    );
+};
+export default (Home);
