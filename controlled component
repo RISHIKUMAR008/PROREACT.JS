@@ -1,0 +1,27 @@
+import React from "react";
+class App extends React.Component {
+    constructor()
+    {
+        super()
+        this.state={
+            name:"",
+            password:"",
+        }
+    }
+    submit() {
+        console.warn(this.state)
+    }
+    render() {
+        return(
+            <div className="App">
+                <h1> controlled Component</h1>
+                <input type="text" placeholder="enter name" onChange={()=>{this.setState({})}}/>
+                <br></br>
+                <input type="password" placeholder="enter password" onChange={(event)=>{this.setState({password:event.target.value})}}/><br></br>
+                <button onClick={()=>{this.submit()}}>submit</button>
+            </div>
+
+        );
+    }
+}
+export default App;
