@@ -1,0 +1,51 @@
+// lAZY LOADING
+// App.js
+
+import React, { Suspense, lazy } from "react";
+import home from "./home";
+import about from './about'
+const Home = lazy(()=>import('./home'))
+const About = lazy(()=>import('./about'))
+class App extends React.Component {
+    render() {
+        return(
+        <div>
+            <Suspense fallback={<div>please wait....</div>}>
+            <h1>lazy LOADING</h1>
+            <home/>
+            <about/>
+            </Suspense>
+        </div>
+      );
+    }
+}
+export default App; 
+
+//About.js
+
+import React, { Component } from 'react'
+
+export default class about extends Component {
+  render() {
+    return (
+      <div>
+        About Component
+      </div>
+    )
+  }
+}
+
+//Home.js
+import React, { Component } from 'react'
+
+export default class home extends Component {
+  render() {
+    return (
+      <div>
+        Home Component
+      </div>
+    )
+  }
+}
+
+
