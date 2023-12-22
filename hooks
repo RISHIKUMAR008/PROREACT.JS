@@ -1,0 +1,29 @@
+//hooks
+//App.js
+import React, { useState, useEffect } from 'react';
+import useTitle from './usetitle'
+const App = () => {
+    const [count,setcount]=useState(0)
+    useTitle(count)
+    useEffect(()=>{
+        document.title=count +"hits on button"
+    })
+    return (
+        <div>
+            <h1>custom Hook</h1>
+            <button onClick={()=>setcount(count+1)}>click</button>
+        </div>
+    );
+};
+export default App;
+
+//
+//usetitle.js
+import { useEffect } from "react";
+const useTitle =(props) =>{
+    useEffect(()=>{
+        document.title=props
+    })
+};
+export default useTitle;
+  
